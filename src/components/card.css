@@ -1,0 +1,11 @@
+.square{
+  list-style: square;
+}
+
+.disc{
+  list-style: disc;
+}
+
+.circle{
+  list-style: circle;
+}

@@ -1,21 +1,35 @@
-
+import Card from "./components/Card";
 
 function App() {
-  let os = ['Android','Blackberry','iPhone','Windows Phone'];
-  let manfacturers = ['Samsung','HTC','Micromax','Apple'];
+  let os = ["Android", "Blackberry", "iPhone", "Windows Phone"];
+  let manfacturers = ["Samsung", "HTC", "Micromax", "Apple"];
+
+  let data = [
+    {
+      title: "Mobile Operating System",
+      items: [
+        { content: "Android" },
+        { content: "Blackberry" },
+        { content: "iPhone" },
+        { content: "Windows Phone" },
+      ],
+    },
+    {
+      title: "Mobile Manfacturers",
+      items: [
+        { content: "Samsung", listStyle: "square" },
+        { content: "HTC", listStyle: "square" },
+        { content: "Micromax" },
+        { content: "Apple", listStyle: "circle" },
+      ],
+    },
+  ];
 
   return (
     <div className="App">
-      <StaticCard title="Mobile Operating Systems" listItems = {os} />
-      <StaticCard title="Mobile Manfacturers" listItems = {manfacturers} />
+      { data.map(el => <Card data={el}/>)}
     </div>
   );
 }
 
-function StaticCard(props){
-  return <div>
-      <h2>{props.title}</h2>
-      <ul>{props.listItems.map(el => <li>{el}</li>)}</ul>
-  </div>;
-}
 export default App;
